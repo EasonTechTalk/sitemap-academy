@@ -35,6 +35,7 @@ jobs:
         run: |
           # Copy the script from main repo to working directory
           cp main-repo/generate_sitemap.py .
+          cp main-repo/CNAME .
           # Run the script
           python generate_sitemap.py
         env:
