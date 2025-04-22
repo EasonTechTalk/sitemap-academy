@@ -6,13 +6,13 @@
     <loc>https://academy.easontechtalk.com/terms</loc>
   </url>
   <url>
-    <loc>https://academy.easontechtalk.com/</loc>
-  </url>
-  <url>
     <loc>https://academy.easontechtalk.com/python-container</loc>
   </url>
   <url>
     <loc>https://academy.easontechtalk.com/amazon-eks-kubernetes-on-aws</loc>
+  </url>
+  <url>
+    <loc>https://academy.easontechtalk.com/</loc>
   </url>
   <url>
     <loc>https://academy.easontechtalk.com/aws-serverless-ecpay</loc>
@@ -27,13 +27,13 @@
     <loc>https://academy.easontechtalk.com/privacy</loc>
   </url>
   <url>
-    <loc>https://academy.easontechtalk.com/hello@podia.com</loc>
+    <loc>https://academy.easontechtalk.com/python-container?coupon=PYTHONCONTAINER50</loc>
   </url>
   <url>
     <loc>https://academy.easontechtalk.com/python-container/buy?offer_id=2843066&amp;payment_terms=full</loc>
   </url>
   <url>
-    <loc>https://academy.easontechtalk.com/python-container?coupon=PYTHONCONTAINER50</loc>
+    <loc>https://academy.easontechtalk.com/hello@podia.com</loc>
   </url>
   <url>
     <loc>https://academy.easontechtalk.com/python-container/buy?offer_id=2843067&amp;payment_terms=full</loc>
@@ -42,16 +42,16 @@
     <loc>https://academy.easontechtalk.com/view/courses/python-container/2972044-container/9656538-docker</loc>
   </url>
   <url>
-    <loc>https://academy.easontechtalk.com/amazon-eks-kubernetes-on-aws/buy?offer_id=2895955&amp;payment_terms=full</loc>
-  </url>
-  <url>
     <loc>https://academy.easontechtalk.com/view/courses/python-container/3003881/9773191</loc>
   </url>
   <url>
-    <loc>https://academy.easontechtalk.com/amazon-eks-kubernetes-on-aws/buy?offer_id=2895954&amp;payment_terms=full</loc>
+    <loc>https://academy.easontechtalk.com/amazon-eks-kubernetes-on-aws/buy?offer_id=2895955&amp;payment_terms=full</loc>
   </url>
   <url>
     <loc>https://academy.easontechtalk.com/aws-serverless-ecpay/buy?offer_id=2849010&amp;payment_terms=full</loc>
+  </url>
+  <url>
+    <loc>https://academy.easontechtalk.com/amazon-eks-kubernetes-on-aws/buy?offer_id=2895954&amp;payment_terms=full</loc>
   </url>
   <url>
     <loc>https://academy.easontechtalk.com/forgot-password</loc>
