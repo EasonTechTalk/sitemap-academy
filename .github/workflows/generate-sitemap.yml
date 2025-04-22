@@ -61,6 +61,7 @@ jobs:
           
           # Copy the newly generated sitemap to gh-pages
           cp sitemap.xml gh-pages/
+          cp CNAME gh-pages/
           
           # Add, commit and push only the sitemap.xml
           cd gh-pages
