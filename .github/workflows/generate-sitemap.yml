@@ -1,0 +1,71 @@
+name: Generate Sitemap
+
+on:
+  # Runs when changes are pushed to main branch
+  push:
+    branches: [ main ]
+  # Allows manual trigger from Actions tab
+  workflow_dispatch:
+  # Optional: Run on schedule (weekly)
+  schedule:
+    - cron: '0 0 * * 0'  # Run at midnight every Sunday
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Needed for pushing to gh-pages
+    steps:
+      - name: Checkout main branch for script
+        uses: actions/checkout@v3
+        with:
+          path: main-repo
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r main-repo/requirements.txt
+      
+      - name: Generate sitemap.xml
+        run: |
+          # Copy the script from main repo to working directory
+          cp main-repo/generate_sitemap.py .
+          # Run the script
+          python generate_sitemap.py
+        env:
+          WEBSITE_URL: ${{ vars.WEBSITE_URL }}
+      
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+      
+      - name: Clear gh-pages and add only sitemap.xml
+        run: |
+          # Save the .git directory
+          mkdir -p temp_git
+          mv gh-pages/.git temp_git/
+          
+          # Remove all existing files
+          rm -rf gh-pages/*
+          
+          # Restore the .git directory
+          mv temp_git/.git gh-pages/
+          rmdir temp_git
+          
+          # Copy the newly generated sitemap to gh-pages
+          cp sitemap.xml gh-pages/
+          
+          # Add, commit and push only the sitemap.xml
+          cd gh-pages
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git add -A  # Stage all changes (which will be deletions and the sitemap.xml)
+          git commit -m "Update sitemap.xml and remove all other files" || echo "No changes to commit"
+          git push
